@@ -144,7 +144,7 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 alias ytv-mp4="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4"
 
 # Shortcut to arch wiki page
-alias Wiki="/home/d3d/Npm/arch_Wiki-linux-x64/arch_Wiki"
+alias Wiki="/home/dedkeny/Npm/arch_Wiki-linux-x64/arch_Wiki"
 
 # Emacs daemon shortcut
 alias emacs="emacsclient -c -a 'emacs'"
@@ -156,7 +156,7 @@ alias pi_ssh="ssh pi@192.168.1."
 
 # Docker containers for easy transportability between OS changes
 
-alias parrotsec="docker run --rm -ti --network host -v /home/d3d/Playground/:/docs parrotsec/security"
+alias parrotsec="docker run --rm -ti --network host -v /home/dedkeny/Playground/:/docs parrotsec/security"
 
 alias bettercap="sudo docker run -it --privileged --net=host bettercap/bettercap"
 
