@@ -15,7 +15,10 @@ sudo apt install yt-dlp gelemental
 sudo apt install -y wireshark wireshark-doc termshark tshark tcpspy
 
 # Sys Admin tools
-sudo apt install  -y tree xclip curl htop net-tools mlocate nmap elfutils neofetch ranger
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo apt update
+sudo apt install fastfetch
+sudo apt install  -y tree xclip curl htop net-tools mlocate nmap elfutils ranger
 
 # Firewall & Security stuffs
 #sudo apt install firewalld checksec sshpass
@@ -71,6 +74,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 # Circuitpython build tools
 sudo add-apt-repository ppa:pybricks/ppa
+
 ## These tools are helpfull outside of circuit-python
 sudo apt install -y git gh gettext uncrustify
 
