@@ -85,10 +85,12 @@ sudo apt install -y docker.io docker-doc
 # sudo apt install -y auditd snoopy
 
 # Ngrok setup
-#cd ~/Downloads
-#wget "https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip"
-#unzip ngrok* && mv ngrok ~/bin  && cd ~/bin
-#./ngrok authtoken 1sAM0Si9t8uRibzsQuJDU22snhN_5hj3sevngEu5oPDa4NNUr
+# curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
+# | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null \
+# && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" \
+# | sudo tee /etc/apt/sources.list.d/ngrok.list \
+# && sudo apt update \
+# && sudo apt install ngrokcd ~/Downloads
 
 # Doom Emacs setup
 #sudo apt install emacs
