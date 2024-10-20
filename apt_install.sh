@@ -81,6 +81,9 @@ sudo apt install -y git gh gettext uncrustify
 # Docker (check /root/.docker/config.json for privesc)
 sudo apt install -y docker.io docker-doc
 
+# Zsh stuff... maybe better shell? still don't know yet.
+sudo apt install zsh zsh-doc zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel9k
+
 # Needs permissions for monitoring software
 # sudo apt install -y auditd snoopy
 
@@ -107,6 +110,7 @@ sudo apt install -y docker.io docker-doc
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 
 # Install colorscripts for the terminal art
+mkdir ~/Git/
 cd ~/Git/
 git clone https://gitlab.com/dwt1/shell-color-scripts.git
 cd shell-color-scripts

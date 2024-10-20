@@ -1,5 +1,3 @@
-#!/bin/bash
-
 ######## Hello, my name is Keny & I have no idea what I am doing ##################################################################
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -44,13 +42,29 @@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle :compinstall filename '/home/dedkeny/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt extendedglob
+bindkey -v
+# End of lines configured by zsh-newuser-install
 
 ################ System Configs ####################################################################################################
 
-
-# Bash fallback PS1 Prompt
-#export DEFAULTPS1=$PS1
-#export PS1="i\[\033[1;31m\]\u@\H\[\033[1;37m\]:\[\033[1;32m\]\w\n> \[$(tput sgr0)\]"
 
 if [ -d "$HOME/Git" ] ;
 then PATH="$HOME/Git:$PATH"
@@ -82,7 +96,7 @@ export EDITOR=vim
 
 # Starship install
 #curl -sS https://starship.rs/install.sh | sh
-eval "$(starship init bash)"
+eval "$(starship init zsh)"
 
 # Colorscript Gitlad @ "https://gitlab.com/dwt1/shell-color-scripts"
 # DistroTube's color-scripts install
@@ -95,6 +109,7 @@ colorscript random
 #export PATH=/home/$USER/bin/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH
 
 ################# Aliases ##########################################################################################################
+
 
 # the terminal rickroll
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
@@ -134,64 +149,13 @@ alias pscpu='ps auxf | sort -nr -k 3'
 
 alias up="sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove -y"
 
+# Shortcuts for non-vanilla programs
+alias copy="xclip -selection clipboard"
+
 # Shortcuts for Git
 alias commit="git commit"
 
 alias gadd="git add ."
 
 alias pushit="git add .; git commit -m 'diff it out'; git push -u origin main"
-
-# Shortcuts for non-vanilla programs
-alias copy="xclip -selection clipboard"
-
-alias picocad="~/bin/PicoCAD/linux/picocad"                               # Downloaded from Humble Bundle
-
-alias provpn="protonvpn-cli connect"                                      # Your favorite VPN agent (TODO protonvpn-cli setup script)
-
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-
-alias ytv-best="yt-dlp -f bestvideo+bestaudio "
-
-alias ytv-mp4="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4"
-
-# Shortcut to arch wiki page
-alias Wiki="/home/d3d/Npm/arch_Wiki-linux-x64/arch_Wiki"
-
-# Emacs daemon shortcut
-alias emacs="emacsclient -c -a 'emacs'"
-
-# SSH commands to connect to the Pi's
-alias pi_kali="ssh kali@192.168.1."
-
-alias pi_ssh="ssh pi@192.168.1."
-
-# Docker containers for easy transportability between OS changes
-
-alias parrotsec="docker run --rm -ti --network host -v /home/d3d/Playground/:/docs parrotsec/security"
-
-alias bettercap="sudo docker run -it --privileged --net=host bettercap/bettercap"
-
-alias metasploitable="sudo docker run -it --rm -p 8080:80 --name xploit_me tleemcjr/metasploitable2"
-
-alias metasploit="docker run -it --rm  --network host --name Msploit metasploitframework/metasploit-framework"
-
-alias scipy-book="sudo docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v "${PWD}":/math jupyter/scipy-notebook "
-
-alias scipy="sudo docker run -p 8888:8888 jupyter/scipy-notebook"
-
-# Nessus needs a new auth token every time you switch OSes
-alias nessus_start="/bin/systemctl start nessusd.service"
-
-alias nessus_stop="/bin/systemctl stop nessusd.service"
-
-#alias blender="~/bin/blender/blender"
-
-# Davinci Reslove Install Instructions For PopOS
-# sudo apt install libssl3 ocl-icd-opencl-dev fakeroot xorriso
-# Install Resolve From "https://www.blackmagicdesign.com/products/davinciresolve/"
-# Extract to ~/bin/
-alias Resolve="~/bin/DaVinci_Resolve_18.6.6_Linux.run"
-alias Davinci="~/bin/DaVinci_Resolve_18.6.6_Linux.run"
-
-
 
