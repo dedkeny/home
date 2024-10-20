@@ -104,6 +104,12 @@ alias :q='exit'
 
 alias ..='cd ..'
 
+alias ...="cd ../.."
+
+alias ....="cd ../../.."
+
+alias .....="cd ../../../.."
+
 alias ls='ls --color=auto'          # Adds color to ls output
 
 alias la='ls -A'                    # Show ALL W/O "." & ".." directories
