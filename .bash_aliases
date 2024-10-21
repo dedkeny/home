@@ -140,6 +140,8 @@ alias pscpu='ps auxf | sort -nr -k 3'
 
 alias up="sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove -y"
 
+# Shortcuts for non-vanilla programs
+
 # Shortcuts for Git
 alias commit="git commit"
 
@@ -147,8 +149,10 @@ alias gadd="git add ."
 
 alias pushit="git add .; git commit -m 'diff it out'; git push -u origin main"
 
-# Shortcuts for non-vanilla programs
 alias copy="xclip -selection clipboard"
+
+# Bedtime screensaver
+alias Bedtime="cmatrix -as"
 
 alias picocad="~/bin/PicoCAD/linux/picocad"                               # Downloaded from Humble Bundle
 
