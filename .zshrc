@@ -70,7 +70,18 @@ ZSH_THEME="random"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python pip golang rust kitty zsh-interactive-cd zsh-navigation-tools history-substring-search)
+plugins=(
+    git
+    python
+    pip
+    golang
+    rust
+    kitty
+    zsh-autosuggestions
+    zsh-interactive-cd
+    zsh-navigation-tools
+    history-substring-search
+)
 
 source $ZSH/oh-my-zsh.sh
 
