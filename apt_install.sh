@@ -17,11 +17,12 @@ sudo apt install -y wireshark wireshark-doc termshark tshark tcpspy
 # Sys Admin tools
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo apt update
-sudo apt install fastfetch
-sudo apt install  -y tree xclip curl htop net-tools mlocate nmap elfutils ranger
+sudo apt install fastfetch tree xclip apache2
+sudo apt install  -y curl htop net-tools mlocate nmap elfutils ranger sshpass
+
 
 # Firewall & Security stuffs
-#sudo apt install firewalld checksec sshpass
+#sudo apt install firewalld checksec
 
 # Development tools
 sudo apt install -y nasm mc arduino cmake dnsenum bsdgames
@@ -67,22 +68,28 @@ sudo apt install -y lm-sensors i7z hardinfo psensor
 #sudo apt install -y build-essential libpcap-dev libusb-1.0-0-dev libnetfilter-queue-dev
 
 # Python stuff
-sudo apt install -y python3 python3.10-venv python-is-python3 bpython python3-pip
+sudo apt install -y python3.11 python3.11-venv python-is-python3 bpython python3-pip python3-flask
 # Pip doesn't like installing through root FYI
 #pip3 install pwntools sympy scapy oathtool
 export PATH=$PATH:$HOME/.local/bin
 
+# python tools helpful outside python
+sudo apt install gettext uncrustify
+
 # Circuitpython build tools
 sudo add-apt-repository ppa:pybricks/ppa
 
-## These tools are helpfull outside of circuit-python
-sudo apt install -y git gh gettext uncrustify
+# Install git tools
+sudo apt install -y git gh
 
 # Docker (check /root/.docker/config.json for privesc)
 sudo apt install -y docker.io docker-doc
 
+# Terminal stuff
+sudo apt install kitty timg fish
 # Zsh stuff... maybe better shell? still don't know yet.
 #sudo apt install zsh zsh-doc zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel9k
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Needs permissions for monitoring software
 # sudo apt install -y auditd snoopy
@@ -132,4 +139,7 @@ sudo apt install blender
 # sudo apt install libssl3 ocl-icd-opencl-dev fakeroot xorriso
 # Install Resolve From "https://www.blackmagicdesign.com/products/davinciresolve/"
 # Extract to ~/bin/
+
+# Fun programs for fun scripts
+sudo apt install cowsay cmatrix lolcat
 
