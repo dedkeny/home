@@ -30,11 +30,11 @@ sudo apt install -y nasm mc arduino cmake dnsenum bsdgames
 # install Vim & Friends
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
-sudo apt-get install neovim
-sudo apt install vim neovim luarocks ripgrep tmux gopls npm cargo
+sudo apt-get install neovim fzf
+sudo apt install vim luarocks ripgrep tmux gopls npm cargo
 
 #Install Virtualbox
-#sudo apt install -y virtualbox
+sudo apt install -y virtualbox
 
 #GEF-GDB
 sudo apt install gdb
