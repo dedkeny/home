@@ -76,8 +76,8 @@ export PATH=$PATH:/usr/local/go/bin                  # Adds Go into PATH as dire
 export HISTTIMEFORMAT="%F %T "                       # Adds a time listing with "history" command
 export HISTCONTROL=ignoreboth                        # Removes duplicates from .bash_history
 export CLICOLOR=1                                    # Not quite sure if it really works...
-export PATH=$PATH:/usr/bin/python3.13:~/Git				   # Adding Python3.13 & Git folder to path for easier use
-export EDITOR=vim
+export PATH=$PATH:/usr/bin/python3.13				 # Adding Python3.13 to path for easier use
+export EDITOR=neovim
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Starship install
