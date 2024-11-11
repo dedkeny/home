@@ -88,8 +88,8 @@ sudo apt install -y docker.io docker-doc
 # Terminal stuff
 sudo apt install kitty timg fish
 # Zsh stuff... maybe better shell? still don't know yet.
-#sudo apt install zsh zsh-doc zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel9k
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install zsh zsh-doc zsh-autosuggestions zsh-syntax-highlighting
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Needs permissions for monitoring software
 # sudo apt install -y auditd snoopy
@@ -128,6 +128,8 @@ sudo make install
 # Fish completion
     # sudo cp completions/colorscript.fish /usr/share/fish/vendor_completions.d
 
+# Install my repos
+#
 # Install Radare2
 #git clone https://github.com/radareorg/radare2
 #radare2/sys/install.sh
