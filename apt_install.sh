@@ -46,7 +46,11 @@ bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 # sudo npm install -g nativefier ; # Runs website as desktop application
 # nativefier "https://wiki.archlinux.org/" --name "arch_Wiki" ; Builds chromium "App" of the Arch Wiki for easy access of linux documentation
 
-
+# install Brave Browser
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
 
 # 6502 Development / Emulator
 #sudo apt install cc65 fceux
