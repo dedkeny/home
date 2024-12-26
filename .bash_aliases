@@ -179,6 +179,8 @@ alias pi_kali="ssh kali@192.168.1."
 
 alias pi_ssh="ssh pi@192.168.1."
 
+alias arduinoIDE="~/bin/arduino-ide_2.3.4_Linux_64bit.AppImage"
+
 # Docker containers for easy transportability between OS changes
 
 alias parrotsec="docker run --rm -ti --network host -v /home/d3d/Playground/:/docs parrotsec/security"
