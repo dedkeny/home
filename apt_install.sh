@@ -135,8 +135,10 @@ sudo make install
 # Install my repos
 
 # Install Ghidra
-# cd ~/Git
-# git clone https://github.com/NationalSecurityAgency/ghidra.github
+#cd ~/Git
+#git clone https://github.com/NationalSecurityAgency/ghidra.github
+#gradle -I gradle/support/fetchDependencies.gradle
+#gradle buildGhidra
 
 # Install Radare2
 #git clone https://github.com/radareorg/radare2
