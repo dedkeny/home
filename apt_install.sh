@@ -133,7 +133,11 @@ sudo make install
     # sudo cp completions/colorscript.fish /usr/share/fish/vendor_completions.d
 
 # Install my repos
-#
+
+# Install Ghidra
+# cd ~/Git
+# git clone https://github.com/NationalSecurityAgency/ghidra.github
+
 # Install Radare2
 #git clone https://github.com/radareorg/radare2
 #radare2/sys/install.sh
