@@ -44,43 +44,46 @@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-
 ################ System Configs ####################################################################################################
-
 
 # Bash fallback PS1 Prompt
 #export DEFAULTPS1=$PS1
 #export PS1="i\[\033[1;31m\]\u@\H\[\033[1;37m\]:\[\033[1;32m\]\w\n> \[$(tput sgr0)\]"
 
-if [ -d "$HOME/Git" ] ;
-then PATH="$HOME/Git:$PATH"
+# Ghostty shell integration for Bash. This should be at the top of your bashrc!
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+    builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
 fi
 
-if [ -d "$HOME/.cargo/bin" ] ;
-then PATH="$HOME/.cargo/bin:$PATH"
+if [ -d "$HOME/Git" ]; then
+    PATH="$HOME/Git:$PATH"
 fi
 
-if [ -d "$HOME/.bin" ] ;
-then PATH="$HOME/.bin:$PATH"
+if [ -d "$HOME/.cargo/bin" ]; then
+    PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-if [ -d "$HOME/.local/bin" ] ;
-then PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.bin" ]; then
+    PATH="$HOME/.bin:$PATH"
 fi
 
-if [ -d "$HOME/Applications" ] ;
-then PATH="$HOME/Applications:$PATH"
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -d "/var/lib/flatpak/exports/bin/" ] ;
-then PATH="/var/lib/flatpak/exports/bin/:$PATH"
+if [ -d "$HOME/Applications" ]; then
+    PATH="$HOME/Applications:$PATH"
 fi
 
-export PATH=$PATH:/usr/local/go/bin                  # Adds Go into PATH as directed from creators
-export HISTTIMEFORMAT="%F %T "                       # Adds a time listing with "history" command
-export HISTCONTROL=ignoreboth                        # Removes duplicates from .bash_history
-export CLICOLOR=1                                    # Not quite sure if it really works...
-export PATH=$PATH:/usr/bin/python3.13				 # Adding Python3.13 to path for easier use
+if [ -d "/var/lib/flatpak/exports/bin/" ]; then
+    PATH="/var/lib/flatpak/exports/bin/:$PATH"
+fi
+
+export PATH=$PATH:/usr/local/go/bin   # Adds Go into PATH as directed from creators
+export HISTTIMEFORMAT="%F %T "        # Adds a time listing with "history" command
+export HISTCONTROL=ignoreboth         # Removes duplicates from .bash_history
+export CLICOLOR=1                     # Not quite sure if it really works...
+export PATH=$PATH:/usr/bin/python3.13 # Adding Python3.13 to path for easier use
 export EDITOR=neovim
 #export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
@@ -114,25 +117,25 @@ alias ....="cd ../../.."
 
 alias .....="cd ../../../.."
 
-alias ls='ls --color=auto'          # Adds color to ls output
+alias ls='ls --color=auto' # Adds color to ls output
 
-alias la='ls -A'                    # Show ALL W/O "." & ".." directories
+alias la='ls -A' # Show ALL W/O "." & ".." directories
 
-alias ll='ls -alF'                  # LIST ALL with FILE extention
+alias ll='ls -alF' # LIST ALL with FILE extention
 
-alias lh='ls -d .* --color=auto'    # List hidden
+alias lh='ls -d .* --color=auto' # List hidden
 
-alias hg='history | grep'           # Usage: "hgrep [keyword]"
+alias hg='history | grep' # Usage: "hgrep [keyword]"
 
-alias grep='grep --color=auto'      # Adds color to grep output
+alias grep='grep --color=auto' # Adds color to grep output
 
 alias egrep='egrep --color=auto'
 
 alias fgrep='fgrep --color=auto'
 
-alias df='df -h'                          # human-readable sizes
+alias df='df -h' # human-readable sizes
 
-alias free='free -m'                      # show sizes in MB
+alias free='free -m' # show sizes in MB
 
 alias psa="ps auxf"
 
@@ -158,9 +161,9 @@ alias copy="xclip -selection clipboard"
 # Bedtime screensaver
 alias Bedtime="cmatrix -as"
 
-alias picocad="~/bin/PicoCAD/linux/picocad"                               # Downloaded from Humble Bundle
+alias picocad="~/bin/PicoCAD/linux/picocad" # Downloaded from Humble Bundle
 
-alias provpn="protonvpn-cli connect"                                      # Your favorite VPN agent (TODO protonvpn-cli setup script)
+alias provpn="protonvpn-cli connect" # Your favorite VPN agent (TODO protonvpn-cli setup script)
 
 alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
 
@@ -208,6 +211,3 @@ alias nessus_stop="/bin/systemctl stop nessusd.service"
 # Extract to ~/bin/
 alias Resolve="~/bin/DaVinci_Resolve_18.6.6_Linux.run"
 alias Davinci="~/bin/DaVinci_Resolve_18.6.6_Linux.run"
-
-
-
